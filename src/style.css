@@ -1,0 +1,136 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #1b1d23;
+  color: #eee;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.controls button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #2a2d36;
+  color: #eee;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #383c48;
+}
+
+#octave-indicator {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #9db8e8;
+  min-width: 8rem;
+  text-align: center;
+}
+
+/* Row of white keys with black keys absolutely positioned on top,
+   overlapping the boundary between the white keys they sit between. */
+.piano-wrapper {
+  max-width: 95vw;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.piano {
+  position: relative;
+  display: flex;
+  height: 220px;
+}
+
+.white-key {
+  position: relative;
+  flex: 0 0 42px;
+  height: 100%;
+  cursor: pointer;
+  background: #fdfdfd;
+  border: 1px solid #333;
+  border-radius: 0 0 6px 6px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 0.65rem;
+  user-select: none;
+  touch-action: none;
+  transition: background 0.05s ease;
+}
+
+.white-key.active {
+  background: #b9d8ff;
+}
+
+.black-key {
+  position: absolute;
+  top: 0;
+  width: 26px;
+  height: 60%;
+  background: #1a1a1a;
+  border: 1px solid #000;
+  border-radius: 0 0 4px 4px;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+  color: #eee;
+  touch-action: none;
+  font-size: 0.6rem;
+  user-select: none;
+  transition: background 0.05s ease;
+}
+
+.black-key.active {
+  background: #5588dd;
+}
+
+.key-label {
+  pointer-events: none;
+  text-align: center;
+}
+
+.hint {
+  max-width: 700px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.hint kbd,
+.hint code {
+  background: #333;
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-family: monospace;
+}
