@@ -49,5 +49,3 @@ It plays a short public-domain melody through the same engine as the keyboard, u
 ## License
 
 MIT
-# qwerty-piano
-# qwerty-piano
